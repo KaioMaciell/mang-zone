@@ -11,6 +11,7 @@ h1 {
     color: #0c0133d7; 
     text-align: center;
     letter-spacing: 0.4rem;
+    margin: 0;
 }
 
 /* Estiliza o corpo da página */
@@ -36,11 +37,13 @@ section {
     flex-direction: column; 
     align-items: center; 
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 /* Estiliza os inputs dentro das seções */
 section input {
-    width: 30rem; 
+    width: 90%; /* Usando % para responsividade */
+    max-width: 30rem; /* Limite máximo */
     border: none;
     padding: 1rem; 
     border-radius: 1.5rem; 
@@ -63,7 +66,8 @@ section button {
 
 /* Estiliza a caixa de resultados da pesquisa */
 .resultados-pesquisa {
-    width: 60rem; 
+    width: 90%; 
+    max-width: 60rem; /* Limite máximo */
     height: 46vh; 
     overflow-y: auto; 
     margin-top: 1rem; 
@@ -81,6 +85,7 @@ section button {
     overflow: hidden;
     display: flex; 
     align-items: center;
+    flex-wrap: wrap; /* Permite que o conteúdo "quebre" para baixo em telas menores */
 }
 
 /* Estiliza as imagens dentro dos itens de resultado */
@@ -137,7 +142,7 @@ footer {
 /* Para telas de até 1200px (tablet e dispositivos menores) */
 @media (max-width: 1200px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     section input {
@@ -145,14 +150,18 @@ footer {
     }
 
     .resultados-pesquisa {
-        width: 90%;
+        width: 80%;
+    }
+
+    .item-resultado img {
+        max-width: 120px;
     }
 }
 
 /* Para telas de até 768px (tablets pequenos) */
 @media (max-width: 768px) {
     body {
-        padding: 2rem;
+        padding: 1rem;
     }
     
     h1 {
